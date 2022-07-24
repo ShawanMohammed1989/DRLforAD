@@ -1,9 +1,10 @@
 # General Information
 
-* This project focuses on using Deep Reinforcement Learning (DRL) 
+This project focuses on using Deep Reinforcement Learning (DRL) 
 to control an autonomous vehicle in hyper-realistic urban simulations.
-The main contribution of our work is in scaling DRL to a real-world problem 
-such as autonomous driving under realistic conditions. 
+The main contribution of our work lies in scaling DRL to the complex problem of autonomous driving under realistic conditions. 
+
+The full release of the entire framework will appear shortly with the publication of the paper.
 
 In the future, we plan to add more scientific DRL work to this repository. 
 We will also clearly define standard tasks for autonomous driving and make them available for solution. 
