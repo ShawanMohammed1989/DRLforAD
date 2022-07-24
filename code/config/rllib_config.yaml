@@ -1,0 +1,11 @@
+# This file defines parameters that are directly related to rllib
+# All parameters is this file can be overwritten by a config in the environments-folder
+
+# Number of APPO iterations to optimize for
+NUMBER_OF_TRAINING_STEPS: 999999
+# Reward to stop optimizing at
+STOP_AT_REWARD_X: 999.9
+# Model registry key (needs to be registered in the main.py file
+MODEL_REGISTRY_KEY: "SEQUENTIAL_MODEL"
+# Framework to use (tf, tfe, tf2, torch)
+FRAMEWORK: "tf" # At the time of writing, tf2 is not fully supported by RLlib. Do not start in debug mode with tf2

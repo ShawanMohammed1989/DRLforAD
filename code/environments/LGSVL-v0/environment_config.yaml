@@ -1,0 +1,19 @@
+RENDER: True
+OBSERVATION_DIMENSION : [100, 300, 3]
+# Number of outputs
+OUTPUTS : 2
+# Crop the image
+CROPIMAGE : True
+# Pixels to crop image to (or if not copping, the maximum and minimum pixels of the image)
+FROM_X :  100  # 24
+TO_X : 400     # 72
+FROM_Y : 100   # 36
+TO_Y : 200     # 84
+# Number of layers of the image of the environment observation
+IMAGE_LAYERS: 3
+# Meanshift the image?
+MEANSHIFT : True
+# Greyscale the image?
+GRAYSCALE : False
+# Number of GPUS for the VAE
+VAE_NUM_GPUS : 0

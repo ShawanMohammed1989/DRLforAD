@@ -1,0 +1,9 @@
+# This file defines parameters that are directly related to ray
+# All parameters is this file can be overwritten by a config in the environments-folder
+
+# Memory to reserve for the ray object memory store
+OBJECT_STORE_MEMORY: 4000000000 # 4000000000 ~ 4GB
+# Number of workers to use (a worker is a process that executes tasks in the ray cluster)
+NUMBER_OF_WORKERS: 8
+
+

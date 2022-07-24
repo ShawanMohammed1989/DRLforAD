@@ -1,0 +1,62 @@
+# This file defines parameters related to the Pong environment
+# This file overwrites parameters that are found in the config-folder
+
+# Overwrite some Parameters from the other configs
+RENDER : True
+# Environment Config:
+# Environment Name (See OpenAI Gym for possible environments and install them before using them here)
+ENVIRONMENT_NAME : "PongNoFrameskip-v4"
+# Observation dimension
+OBSERVATION_DIMENSION : [42, 42, 3] # Atari preprocessors will set the image size as obs_dim * obs_dim * image_layers
+# Dimension of the RLlib (Atari?) Preprocessor
+RLLIB_PREPROCESSOR_DIM: 42
+# Number of layers of the image of the environment observation
+IMAGE_LAYERS: 3
+# Crop the image
+CROPIMAGE : True # Atari has its own preprocessors, so we do not need additional cropping
+# The image goes all over the observation, from 0 to 42
+FROM_X : 0
+TO_X : 42
+FROM_Y : 0
+TO_Y : 42
+# Meanshift the image?
+MEANSHIFT : True
+# Grayscale the image?
+GRAYSCALE : False
+# Restart simulation after x negative rewards
+
+# 0.00001  # learning rate for actor
+ACTOR_LR : 0.0001
+# learning rate for critic
+CRITIC_LR : 0.0002
+# learning rate for VAE
+VAE_LR : 0.002
+# APPO Batch size
+TRAIN_BATCH_SIZE : 64
+# Number of samples to collect from one worker in a batch (this has nothing to do with network training batch sizes)
+ROLLOUT_FRAGMENT_LENGTH: 64
+# Maximum time sequence length
+MAX_TIME_SEQUENCE_LENGTH : 1
+# Repeat actions, bevore returning accumulated reward for x steps
+ACTION_REPEAT_FOR_X_STEPS : 1
+# Skip first x steps of environment before returning observations and learning
+SKIP_FIRST_X_ACTIONS : 0
+# Do not stop after x negative rewards
+STOP_AFTER_X_NEGATIVE_REWARDS : 0
+INITIALIZER : he_normal
+# Choose regularization for ALL layers between "l1", "l2" and "l1_l2"
+REGULARIZER : ""
+# Number of outputs
+OUTPUTS : 3
+
+
+# Variational Autoencoder Parameters
+VAE_CNN_LAYERS : 3  # corresponds to shared layers when VAE is off
+# kernel size in each layer
+VAE_CNN_KERNEL_SIZE : [5, 3, 3, 3, 3, 3, 3]
+# stride size in each layer
+VAE_CNN_STRIDES : [3, 2, 1, 1, 1, 1, 1]
+# stride size in each layer
+VAE_CNN_DECODER_STRIDES : [1, 1, 1, 1, 1, 2, 3]
+# kernel size in each layer
+VAE_CNN_DECODER_KERNEL_SIZE : [3, 3, 3, 3, 3, 3, 5]

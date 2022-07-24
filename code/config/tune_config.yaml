@@ -1,0 +1,49 @@
+# This file defines parameters that are directly related to tune
+# All parameters is this file can be overwritten by a config in the environments-folder
+# Configuration file for running tune hyperparameter tuning
+
+# Async Hyperband Tuning parameters
+# Maximum length of a training
+ASYNC_HP_MAX_T: 2500
+# Minimum length of a training
+ASYNC_HP_GRACE_PERIOD : 250
+# Reduction rate of trainables after each tuning run
+ASYNC_HP_REDUCTION_FACTOR : 2
+# Number of brackets to compare trainables in
+ASYNC_HP_BRACKETS : 1
+
+
+# Number of samples to draw from the parameter space
+NUM_SAMPLES : 16
+
+# Experiment Parameters. This is for training and evaluating networks to calculate metrics s.a. mean accumulated reward e.t.c.
+# How many times do we want to train and evaluate the chosen configuration?
+EXP_NUM_EXPERIMENTS : 3
+# For how many episodes do we want to train?
+EXP_NUM_TRAINING_EPISODES : 10000
+# For how many episodes do we want to evaluate?
+EXP_NUM_EVAL_EPISODES : 100
+
+
+# Stop experiment after x training iterations
+STOP_AT_TRAINING_ITER_X: 250
+# Stop experiment after x timesteps
+STOP_AT_TOTAL_TIMESTEPS_X: 50000
+# Stop experiment after reaching an average reward of x
+# STOP_AT_MEAN_REWARD_X: 900
+
+
+# Parameters to be tuned
+# These parameters are turned into tunable parameter objects in ConfigUtils.py.
+# Prepend every Parameter to sample from loguniformly with 'LOGUNIFORM_'
+# Prepend every Parameter to sample from uniformly with 'UNIFORM_'
+# Prepend every Parameter to sample from grid with 'GRID_SEARCH_'
+## LOGUNIFORM_EXAMPLE_HP1: [0.00001, 0.001]
+## UNIFORM_EXAMPLE_HP2: [0.01, 1000000]
+## GRID_SEARCH_EXAMPLE_HP3: [1, 2, 3, 4]
+GRID_SEARCH_TRAIN_BATCH_SIZE: [32, 64]
+GRID_SEARCH_ACTOR_CNN_LAYERS : [1, 2]
+GRID_SEARCH_CRITIC_CNN_LAYERS : [1, 2]
+# GRID_SEARCH_EPISOL : [0.1, 0.2]
+# GRID_SERACH_LAMBDA : [0.95, 0.99]
+# GRID_SEARCH_GAMMA : [0.98, 0.99]

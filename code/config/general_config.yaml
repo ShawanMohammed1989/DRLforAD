@@ -1,0 +1,131 @@
+# This file defines parameters that are not directly related to the used libraries but rather to the used algorithms.
+# All parameters is this file can be overwritten by a config in the environments-folder
+
+# General:
+RENDER : True
+# Minimum iteration time for the APPO algorithm in seconds
+MIN_ITER_TIME_S: 4
+# Logging level for RLLib
+LOG_LEVEL: "WARNING"
+# Total number of CPUs available for training
+NUM_CPUS: 10
+# Total number of GPUs available for training
+NUM_GPUS: 0
+# Environment Name (See OpenAI Gym for possible environments and install them before using them here)
+# !!! This must also be the name of your environment folder inside the environments directory !!!
+ENVIRONMENT_FOLDER_NAME : "CarRacing-v0"
+# Dimension used by the RLlib Preprocessor
+# RLLIB_PREPROCESSOR_DIM: 42
+
+# Some hyperparameters:
+# Gamma for discounting
+GAMMA : 0.98
+# Lambda for GAE discounting
+LAMBDA : 0.95
+# Epsilon for loss objective clipping
+EPSILON : 0.2
+# 0.00001  # learning rate for actor
+ACTOR_LR : 0.00001
+# learning rate for critic
+CRITIC_LR : 0.00002
+# learning rate for VAE
+VAE_LR : 0.001
+# APPO Batch size
+TRAIN_BATCH_SIZE : 32
+# Number of samples to collect from one worker in a batch (this has nothing to do with network training batch sizes)
+ROLLOUT_FRAGMENT_LENGTH: 8
+# Maximum time sequence length
+MAX_TIME_SEQUENCE_LENGTH : 1
+# Repeat actions, bevore returning accumulated reward for x steps
+ACTION_REPEAT_FOR_X_STEPS : 1
+# Skip first x steps of environment before returning observations and learning
+SKIP_FIRST_X_ACTIONS : 50
+INITIALIZER : he_normal
+# Choose regularization for ALL layers between "l1", "l2" and "l1_l2", the rates are hardcoded
+REGULARIZER : "l1_l2"
+# V-Trace (see IMPALA paper)
+VTRACE : False
+
+# NetworkConfig:
+# When disabling the VAE, no decoder will be used and the encoder will be trained by PPO only
+ENABLE_VAE : True
+# The network architecture to use, choose from SEQUENTIAL, RNN_BATCH and RNN_WINDOW
+NETWORK_ARCHITECTURE: "SEQUENTIAL"
+# For RNN_WINDOW, this sets the size of the window
+WINDOW_SIZE: 1
+
+# Amount of shared layers
+SHARED_CNN_LAYERS : 0
+# Filter size in each layer
+SHARED_CNN_FILTERS : [64, 128, 256, 256]
+# kernel size in each layer
+SHARED_CNN_KERNEL_SIZE : [4, 4, 4, 3]
+# stride size in each layer
+SHARED_CNN_STRIDES : [2, 2, 2, 1]
+
+# Amount of layers
+ACTOR_CNN_LAYERS : 1
+# Filter size in each layer
+ACTOR_CNN_FILTERS : [128, 64]
+# kernel size in each layer
+ACTOR_CNN_KERNEL_SIZE : [3, 3, 3]
+# stride size in each layer
+ACTOR_CNN_STRIDES : [2, 1, 1]
+# Amout of layers
+ACTOR_FC_LAYERS : 1
+# Amout of units in the actor, before separate action layers
+ACTOR_FC_UNITS : [512, 256, 128]
+# Which CNN layers should be GRU layers?
+ACTOR_CNN_GRU_LAYERS: [0, 0, 0]  # Currently not supported
+# Which Dense layers should be GRU layers?
+ACTOR_FC_GRU_LAYERS: [0, 0, 0]
+# Size of the RNN cell state
+ACTOR_GRU_STATE_SIZES: [512, 256, 128]
+
+# amount of layers
+CRITIC_CNN_LAYERS : 2
+# Filter size in each layer
+CRITIC_CNN_FILTERS : [128, 246]
+# kernel size in each layer
+CRITIC_CNN_KERNEL_SIZE : [3, 3, 3]
+# stride size in each layer
+CRITIC_CNN_STRIDES : [2, 1, 1]
+# amout of fc/GRU layers
+CRITIC_FC_LAYERS : 2
+# amout of units per layer
+CRITIC_FC_UNITS : [512, 256, 128]
+# Which CNN layers should be GRU layers?
+CRITIC_CNN_GRU_LAYERS: [0, 0, 0]  # Currently not supported
+# Which Dense layers should be GRU layers? Do not exceed CRITIC_FC_LAYERS!
+CRITIC_FC_GRU_LAYERS: [0, 0, 0]
+# Size of the GRU cell state
+CRITIC_GRU_STATE_SIZES: [512, 256, 128]
+
+# Variational Autoencoder Parameters
+# Dimensions in the latent space
+VAE_LATENT_DIM : 50
+# amount of layers
+VAE_CNN_LAYERS : 3  # corresponds to shared layers when VAE is off
+# Filter size in each layer
+VAE_CNN_FILTERS : [32, 64, 128, 256, 512, 1024, 2048]
+# kernel size in each layer
+VAE_CNN_KERNEL_SIZE : [3, 3, 3, 3, 3, 3, 3]
+# kernel size in each layer
+VAE_CNN_PADDING : [same, same, same, same, same, same, same]
+# stride size in each layer
+VAE_CNN_STRIDES : [2, 2, 1, 1, 1, 1, 1]
+# stride size in each layer
+VAE_CNN_DECODER_FILTERS : [2048, 1024, 512, 256, 128, 64, 32]
+VAE_CNN_DECODER_PADDING : [same, same, same, same, same, same, same]
+# stride size in each layer
+VAE_CNN_DECODER_STRIDES : [1, 1, 1, 1, 1, 2, 2]
+# kernel size in each layer
+VAE_CNN_DECODER_KERNEL_SIZE : [3, 3, 3, 3, 3, 3, 3]
+# vae batch size
+VAE_BATCH_SIZE : 64
+# vae replay buffer size
+VAE_REPLAY_BUFFER_SIZE: 10000
+# CPUs used by the VAE optimisation thread
+VAE_NUM_CPUS: 0
+# GPUs used by the VAE optimisation thread
+VAE_NUM_GPUS: 0

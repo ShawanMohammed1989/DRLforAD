@@ -1,0 +1,36 @@
+# This file defines parameters related to the CarRacing environment
+# This file overwrites parameters that are found in the config-folder
+
+RENDER : True 
+# Environment Config:
+OBSERVATION_DIMENSION : [96, 96, 3]
+# Environment Name (See OpenAI Gym for possible environments and install them before using them here)
+ENVIRONMENT_NAME : "CarRacing-v0"
+# Crop the image?
+CROPIMAGE : True
+# Pixels to crop image to (or if not copping, the maximum and minimum pixels of the image)
+FROM_X : 24   # 24
+TO_X : 72     # 72
+FROM_Y : 0   # 36
+TO_Y : 72     # 84
+# Number of layers of the image of the environment observation
+IMAGE_LAYERS: 3
+# Meanshift the image?
+MEANSHIFT : True
+# Greyscale the image?
+GRAYSCALE : False
+# Restart simulation after x negative rewards
+STOP_AFTER_X_NEGATIVE_REWARDS : 40
+# Log worker PIDs, execution time since start of training and episode rewards to csv under ./episode_rewards
+LOG_EPISODE_REWARDS: True
+# Repeat actions, bevore returning accumulated reward for x steps
+ACTION_REPEAT_FOR_X_STEPS : 4
+# Saved weights
+# SAVED_VAE_WEIGHTS_FILE : "CarRacingVAE.h5"
+# SAVED_MODEL_WEIGHTS_FILE : "CarRacing.h5" # Not used atm
+# Concat this information to observation space of environment
+CONCAT_STEERING : False
+CONCAT_GYRO : False
+CONCAT_SPEED : False
+# Number of outputs
+OUTPUTS: 3
