@@ -38,14 +38,6 @@ adopted from Angelo
 * tune_config.yaml - Configuration parameters for Ray tune
 * main.py - Main entry point to run this project
 
-The code folder is mounted as a volume in the docker container. You can therefore develop in the code with an IDE of 
-your choice and run your code inside the container. 
-
-The sequential structure of the ANN is discussed in Angelo's master thesis.
-As for the optimization algorithm, RLLib's APPO was extended by the VAE Loss from Angelos thesis.
-*Policy.py* and *Model.py* are where this extension happens and should be understood first to grasp the core mechanisms of Artur's thesis.
-*ArtificialNeuralNetwork.py and config.yaml, Environment.py, Trainable.py, Config.py, Preprocessing.py* can be left alone at first, but if explored, should be explored in the order as they appear in this sentence.
-
 # Adding another environment
 This project comes with two environments preconfigured: CarRacing-v0 and PongNoFrameskip-v4.
 You can add other environments by setting the *ENVIRONMENT_FOLDER_NAME* parameter in *config/general_config.yaml*.
