@@ -65,6 +65,6 @@ The naming convention of the other, optional, files and what they should or may 
 
 # Authors
 
-* **Shawan Mohammed, MSc.** - *Supervision in development* - [ISS RWTH](https://www.ice.rwth-aachen.de/institute/staff/scientific-staff/shawan-mohammed/)
-* **Artur Niederfahrenhorst, Msc.** - *Development* 
-* **Mohamed Kastouri, Msc.** - *Development* 
+* **Shawan Mohammed, MSc.** - [ISS RWTH](https://www.ice.rwth-aachen.de/institute/staff/scientific-staff/shawan-mohammed/)
+* **Artur Niederfahrenhorst, Msc.** 
+* **Mohamed Kastouri, Msc.** 
