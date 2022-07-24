@@ -1,35 +1,20 @@
 # General Information
 
-* This project is based on Artur Niederfahrenhorst's master thesis, which investigated usage of recurrent cells in PPO.
-Prior to Artur, a series of theses had been absolved by student of Shawan Mohamed, which were all centered around
-PPO and the CarRacing-v0 environment by OpenAI. This project encapsulates some of the achievements of previous work
-at the ICE in a Docker Container that is based on [Ray and RLLib](docs.ray.io/). RLLib is Ray's Reinforcement Learning
-library.
+* This project focuses on using Deep Reinforcement Learning (DRL) 
+to control an autonomous vehicle in hyper-realistic urban simulations.
+The main contribution of our work is in scaling DRL to a real-world problem 
+such as autonomous driving under realistic conditions. 
 
-* With this project, we hope to achieve some abstraction from previous work and provide a boiler plate for future theses.
-Since work has "piled up" and is harder to see through now. 
-Hopefully, future students can work with Ray, RLlib and code from previous work in a structured way.
+In the future, we plan to add more scientific DRL work to this repository. 
+We will also clearly define standard tasks for autonomous driving and make them available for solution. 
+In addition to LGSVL, other hyperrealistic simulations will also be integrated, such as Carla
 
-* To understand how to use this repository, Ray, RLlib and possibly older code, there are five main resources: this 
-README-file, documentation inside the code, the [Ray and RLLib documentation](https://docs.ray.io/),
-[Angelo Mihaltan's master thesis](https://pub-gitlab.iss.rwth-aachen.de/ShawanMohammed2/angelo_ma),
-[Artur Niederfahrenhorsts's master thesis](https://pub-gitlab.iss.rwth-aachen.de/niederfahrenhorst/master-thesis-artur-niederfahrenhorst).
-For access to older repositories, also to Kemal's/Hendrik's Master thesis, ask Shawan.
-For a deeper understanding of Ray, maybe also have a look at the tutorials at [Anyscale](https://anyscale.dev/).
-
-![Overview of this repo](resources/rllib-for-students-at-the-ice-graphic.jpg "Overview")
-\[ Illustration: Altered version of an image taken from the Ray documentation website. \]
-# Scope
-
-This repository aims to make it easier for future students to write a thesis that complies with Shawan's guidelines and 
-the guidelines of the ICE. It may also make future work more productive. Future students can re-use old code, 
-build upon it, or replace it with their own algorithms and neural networks. 
 
 # Install and run
 
-This work used Anyscale's RLlib framework as a tool.
-So before you start working on this repository, you should spend a few hours with the original Ray repository from Anyscale: https://github.com/ray-project.
-You will find there sample code for understanding and a very good documentation: https://docs.ray.io/en/latest/
+This work used Anyscale's RLlib framework.
+So before you start working on this repository, you should spend a few hours with the original [Ray repository from Anyscale](https://github.com/ray-project).
+You will find there sample code for understanding and a very good [documentation](https://docs.ray.io/en/latest/)
 
 # Understand the file structure of the project
 
@@ -88,5 +73,5 @@ The naming convention of the other, optional, files and what they should or may 
 # Authors
 
 * **Shawan Mohammed, MSc.** - *Supervision in development* - [ISS RWTH](https://www.ice.rwth-aachen.de/institute/staff/scientific-staff/shawan-mohammed/)
-* **Artur Niederfahrenhorst, Msc.** - *Development* - [ISS RWTH](https://www.ice.rwth-aachen.de/institute/student-members/student-assistants/#ArturNiederfahrenhorst)
-
+* **Artur Niederfahrenhorst, Msc.** - *Development* 
+* **Mohamed Kastouri, Msc.** - *Development* 
