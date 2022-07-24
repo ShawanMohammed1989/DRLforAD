@@ -27,47 +27,9 @@ build upon it, or replace it with their own algorithms and neural networks.
 
 # Install and run
 
-To start working, you should have docker installed. In case you do not know how to work with docker, spend a few hours
-on the official docker tutorials first, it will save you lots of time and is an important skill anyways.
-
-```
-bash build_docker.sh
-```
-
-This will take some time and build your docker image from the current official ray docker image.
-Incase you want to access open windows (such as simulation visualizations) inside the Docker container, you need an X-Client. 
-
-## Windows:
-* Download [VcXsrv for Windows](https://sourceforge.net/projects/vcxsrv/)
-* Disable *access control* in the Extra Settings
-```
-sh launch_docker.sh -d <your own IP address goes here>
-```
-If you can not use Gygwin or something similar, work through *launch_docker.sh* to gain an understanding on how you can
-get around the above instruction and update this README if with your knowledge.
-
-## OSX:
-* Download [XQuartz for OSX](https://www.xquartz.org/)
-* For XQuartz: Enable *Allow connections from networks clients* in the Security Settings
-```
-xhost + localhost
-bash launch_docker.sh -o
-```
-
-You may want to increase the maximum memory size for your containers from the daemon's side. RLLib uses a shared memory
-object store, which may take up multiple gigabytes of memory, depending on your task
-
-## Other OSs:
-* You will have to help yourself.
-
-
-# Running headless
-
-You can run any simulations that open windows on your machine inside the container with xvfb-run:
-For example:
-```
-xvfb-run -s "-screen 0 1400x900x24" python main.py
-```
+This work used Anyscale's RLlib framework as a tool.
+So before you start working on this repository, you should spend a few hours with the original Ray repository from Anyscale: https://github.com/ray-project.
+You will find there sample code for understanding and a very good documentation: https://docs.ray.io/en/latest/
 
 # Understand the file structure of the project
 
